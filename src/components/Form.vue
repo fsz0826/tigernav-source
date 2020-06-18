@@ -15,16 +15,20 @@
 
 <style lang="scss" scoped>
   .globalHeader {
-    margin: 100px 24px 20px 24px ;
+    margin: 200px 0 50px 0;
     > .searchForm {
       display: flex;
       justify-content: space-between;
+      max-width: 400px;
+      margin-right: auto;
+      margin-left: auto;
       > input{
-        border: none;
         width: 100%;
         margin-right: 20px;
         height: 40px;
         padding: 0 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
       }
       > button {
         white-space: nowrap;

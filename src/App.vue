@@ -1,7 +1,12 @@
 <template>
   <div id="app">
+    <Form/>
     <Layout>
-      <Form/>
+      <Tags/>
+      <Tags/>
+      <Tags/>
+      <Tags/>
+      <Tags/>
     </Layout>
   </div>
 
@@ -10,9 +15,11 @@
 <script>
   import Layout from "./components/Layout"
   import Form from "./components/Form"
+  import Tags from "./components/Tags"
+
   export default {
     name: 'App',
-    components: {Form, Layout},
+    components: {Tags, Form, Layout},
   }
 </script>
 
