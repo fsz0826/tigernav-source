@@ -1,13 +1,12 @@
 <template>
   <div class="tag-wrapper">
-    <div class="site" @click="openA">
-      <div class="logo">{{logo}}</div>
-      <div class="link">{{url}}</div>
-    </div>
-    <div class="close" @click="rem(index)">
-      <svg class="icon">
-        <use xlink:href="#icon-remove"></use>
-      </svg>
+    <div class="site" @click="addSource">
+      <div class="logo">
+        <svg class="icon">
+          <use xlink:href="#icon-add"></use>
+        </svg>
+      </div>
+      <div class="link">新增站点</div>
     </div>
   </div>
 </template>
@@ -16,30 +15,20 @@
   import XXX from "../source"
 
   export default {
-    name: "Tags",
-    props: ['logo', 'urls','index'],
-    data(){
-      return{
-        url:''
+    name: "Add",
+    methods:{
+      addSource(){
+        XXX.add()
       }
     },
-    methods: {
-      openA() {
-        window.open(this.urls, "_self");
-      },
-      rem(index){
-        XXX.remove(index)
-      },
-    },
     created() {
-        this.url =XXX.simplifyUrl(this.urls)
+      console.log(XXX.hashMap)
     }
   }
 </script>
 
 <style lang="scss" scoped>
   .tag-wrapper {
-    position: relative;
     background: white;
     border: 1px solid #ddd;
     width: 160px;
@@ -66,21 +55,19 @@
         font-size: 64px;
         text-transform: uppercase;
         color: black;
+
+        > .icon {
+          width: 56px;
+          height: 56px;
+        }
       }
 
       > .link {
-        font-size: 18px;
+        font-size: 15px;
         margin-top: 4px;
         color: black;
       }
     }
 
-    > .close {
-      position: absolute;
-      right: 5px;
-      top: 3px;
-      display: none;
-    }
   }
-
 </style>

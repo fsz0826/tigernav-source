@@ -2,11 +2,8 @@
   <div id="app">
     <Form/>
     <Layout>
-      <Tags/>
-      <Tags/>
-      <Tags/>
-      <Tags/>
-      <Tags/>
+      <Tags v-for="(node,index) in source" :key="index" :logo="node.logo" :urls="node.url" :index="index"/>
+      <Add/>
     </Layout>
   </div>
 
@@ -16,10 +13,19 @@
   import Layout from "./components/Layout"
   import Form from "./components/Form"
   import Tags from "./components/Tags"
+  import XXX from "./source"
+  import Add from "./components/Add"
 
   export default {
     name: 'App',
-    components: {Tags, Form, Layout},
+    components: {Add, Tags, Form, Layout},
+    data(){
+      return{
+        source:XXX.hashMap
+      }
+    },
+    created() {
+    }
   }
 </script>
 
